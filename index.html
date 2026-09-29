@@ -431,75 +431,181 @@ html{scroll-behavior:smooth;}
 </div>
 </div>
 <style id="resultados-reais-css">
-.resultados-reais{background-color:#FAF7F5;padding:100px 20px;}
-.resultados-reais__inner{max-width:1280px;margin:0 auto;text-align:center;}
-.resultados-reais__eyebrow-row{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:24px;}
-.resultados-reais__eyebrow-row hr{flex:0 0 60px;width:60px;height:1px;border:none;background-color:#D1A6A3;margin:0;}
-.resultados-reais__eyebrow{font-family:"Filson Pro", Sans-serif;font-size:13px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#D1A6A3;}
-.resultados-reais__title{font-family:"Poppins", Sans-serif;font-size:44px;font-weight:500;line-height:1.2em;color:#241A15;margin:0 auto 18px auto;max-width:680px;}
-.resultados-reais__subtitle{font-family:"Filson Pro", Sans-serif;font-size:17px;font-weight:400;line-height:1.5em;color:#6B615C;max-width:640px;margin:0 auto 50px auto;}
-.resultados-reais__grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:26px;text-align:left;}
-.resultados-reais__card{display:block;text-decoration:none;border-radius:14px;overflow:hidden;background-color:#FFFFFF;box-shadow:0 10px 30px rgba(36,26,21,0.08);transition:transform .25s ease, box-shadow .25s ease;}
-.resultados-reais__card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(36,26,21,0.14);}
-.resultados-reais__card-art{position:relative;width:100%;aspect-ratio:370/256;overflow:hidden;}
-.resultados-reais__card-art--1{background:linear-gradient(135deg, #B98A83 0%, #D9B4AC 35%, #EFDCD5 70%, #F7ECE7 100%);}
-.resultados-reais__card-art--2{background:linear-gradient(225deg, #EFDCD5 0%, #D1A6A3 55%, #B98A83 100%);}
-.resultados-reais__card-art--3{background:radial-gradient(circle at 74% 32%, #F3E4DE 0%, #EFDCD5 30%, transparent 42%), linear-gradient(135deg, #B98A83 0%, #D1A6A3 45%, #EFDCD5 100%);}
-.resultados-reais__card-art::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg, transparent 40%, rgba(255,255,255,0.35) 48%, transparent 56%);}
-.resultados-reais__card-art--photo{background-size:cover;background-position:center;}
-.resultados-reais__card-art--photo::after{display:none;}
-.resultados-reais__card-footer{display:flex;align-items:center;justify-content:space-between;padding:20px 22px;}
-.resultados-reais__card-label{font-family:"Poppins", Sans-serif;font-size:19px;font-weight:400;color:#241A15;}
-.resultados-reais__card-arrow{flex-shrink:0;width:38px;height:38px;border-radius:50%;border:1px solid #D1A6A3;display:flex;align-items:center;justify-content:center;color:#D1A6A3;font-size:16px;transition:background-color .2s ease, color .2s ease;}
-.resultados-reais__card:hover .resultados-reais__card-arrow{background-color:#D1A6A3;color:#FFFFFF;}
-.resultados-reais__caption{margin:36px 0 24px 0;font-family:"Filson Pro", Sans-serif;font-size:14px;color:#9A8F89;}
-.resultados-reais__cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:"Filson Pro", Sans-serif;font-weight:400;font-size:14px;text-transform:uppercase;letter-spacing:0.5px;color:#FFFFFF;background-color:#D1A6A3;border-radius:50px;padding:20px 32px;text-decoration:none;}
-@media(max-width:900px){
-  .resultados-reais__grid{grid-template-columns:1fr;}
-  .resultados-reais__title{font-size:32px;}
+.rr{position:relative;background-color:#FAF7F5;padding:120px 20px 90px 20px;overflow:hidden;}
+.rr__inner{position:relative;max-width:1240px;margin:0 auto;text-align:center;z-index:2;}
+.rr__eyebrow-row{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:22px;}
+.rr__eyebrow-row .rr__line{flex:0 0 44px;width:44px;height:1px;background-color:#C79B92;margin:0;border:none;}
+.rr__eyebrow{font-family:"Filson Pro", Sans-serif;font-size:12px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:#C08477;}
+.rr__title{font-family:"Poppins", Sans-serif;font-size:46px;font-weight:500;line-height:1.18em;color:#2B211C;margin:0 auto 18px auto;max-width:680px;}
+.rr__title em{font-style:normal;color:#C08477;}
+.rr__subtitle{font-family:"Filson Pro", Sans-serif;font-size:16px;font-weight:400;line-height:1.6em;color:#7A6F69;max-width:560px;margin:0 auto 56px auto;}
+
+.rr__grid{display:grid;grid-template-columns:1fr;gap:20px;text-align:left;}
+@media(min-width:768px){ .rr__grid{grid-template-columns:repeat(2, 1fr);gap:24px;} }
+@media(min-width:1024px){ .rr__grid{grid-template-columns:repeat(3, 1fr);gap:28px;} }
+
+.rr-card{background-color:#FFFFFF;border-radius:22px;overflow:hidden;box-shadow:0 18px 45px rgba(43,33,28,0.07);opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease, box-shadow .3s ease, translate .3s ease;}
+.rr-card.is-visible{opacity:1;transform:translateY(0);}
+@media(min-width:1024px){
+  .rr-card:hover{box-shadow:0 24px 55px rgba(43,33,28,0.12);translate:0 -3px;}
 }
-@media(max-width:480px){
-  .resultados-reais{padding:70px 16px;}
-  .resultados-reais__title{font-size:28px;max-width:340px;}
-  .resultados-reais__subtitle{font-size:15px;}
-  .resultados-reais__eyebrow-row hr{flex-basis:32px;width:32px;}
+
+.rr-card__media{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background-color:#EFE6E1;}
+@media(max-width:767px){ .rr-card__media{aspect-ratio:16/8.5;} }
+.rr-card__media img{width:100%;height:100%;object-fit:cover;display:block;}
+
+.rr-badge{position:absolute;top:12px;font-family:"Filson Pro", Sans-serif;font-size:10px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:#3A2E27;background-color:rgba(255,255,255,0.82);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);padding:5px 11px;border-radius:20px;}
+.rr-badge--before{left:12px;}
+.rr-badge--after{right:12px;}
+
+.rr-card__divider{position:absolute;top:0;bottom:0;left:50%;width:1px;background-color:rgba(255,255,255,0.55);transform:translateX(-0.5px);pointer-events:none;}
+.rr-card__handle{position:absolute;top:50%;left:50%;width:32px;height:32px;border-radius:50%;background-color:#FFFFFF;color:#C08477;display:flex;align-items:center;justify-content:center;transform:translate(-50%,-50%);box-shadow:0 4px 14px rgba(43,33,28,0.22);pointer-events:none;}
+.rr-card__handle svg{width:14px;height:14px;}
+
+.rr-card__footer{display:flex;align-items:center;gap:14px;padding:18px 20px;min-height:76px;}
+.rr-card__icon{flex-shrink:0;width:40px;height:40px;border-radius:50%;background-color:#F6EAE6;color:#C08477;display:flex;align-items:center;justify-content:center;}
+.rr-card__icon svg{width:19px;height:19px;}
+.rr-card__text{display:flex;flex-direction:column;gap:2px;min-width:0;}
+.rr-card__title{font-family:"Poppins", Sans-serif;font-size:17px;font-weight:600;color:#2B211C;line-height:1.3em;}
+.rr-card__subtitle{font-family:"Filson Pro", Sans-serif;font-size:13.5px;font-weight:400;color:#8A7E78;line-height:1.3em;}
+
+.rr__caption{margin:36px 0 28px 0;font-family:"Filson Pro", Sans-serif;font-size:13px;color:#9A8F89;text-align:center;}
+.rr__cta-wrap{text-align:center;}
+.rr__cta{display:inline-flex;align-items:center;justify-content:center;gap:9px;width:calc(100% - 40px);max-width:360px;font-family:"Filson Pro", Sans-serif;font-weight:500;font-size:14px;text-transform:uppercase;letter-spacing:0.6px;color:#FFFFFF;background-color:#D1A6A3;border-radius:50px;padding:18px 24px;text-decoration:none;transition:transform .25s ease, box-shadow .25s ease;}
+@media(min-width:768px){
+  .rr__cta{width:auto;min-width:300px;max-width:340px;}
+  .rr__cta:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(209,166,163,0.45);}
+}
+.rr__cta i{font-size:16px;}
+
+.rr__deco{position:absolute;pointer-events:none;opacity:0.14;color:#C08477;z-index:1;}
+.rr__deco--tl{top:-30px;left:-40px;width:190px;height:190px;}
+.rr__deco--br{bottom:-40px;right:-50px;width:220px;height:220px;transform:scaleX(-1);}
+@media(max-width:640px){
+  .rr{padding-top:70px;padding-bottom:60px;}
+  .rr__inner{max-width:340px;}
+  .rr__title{font-size:36px;line-height:1.08em;max-width:340px;}
+  .rr__subtitle{font-size:15px;margin-bottom:38px;}
+  .rr__eyebrow-row .rr__line{flex-basis:28px;width:28px;}
+  .rr__deco--tl{width:110px;height:110px;top:-20px;left:-30px;opacity:0.12;}
+  .rr__deco--br{width:130px;height:130px;bottom:-25px;right:-30px;}
 }
 </style>
-<section id="resultados" class="resultados-reais">
-<div class="resultados-reais__inner">
-<div class="resultados-reais__eyebrow-row"><hr/><span class="resultados-reais__eyebrow">Resultados Reais</span><hr/></div>
-<h2 class="resultados-reais__title">Cada tratamento conta uma história de cuidado.</h2>
-<p class="resultados-reais__subtitle">Conheça alguns dos tratamentos mais procurados e descubra qual é o ideal para o seu objetivo.</p>
-<div class="resultados-reais__grid">
-<a class="resultados-reais__card" href="#tratamentos">
-<div class="resultados-reais__card-art resultados-reais__card-art--photo" style="background-image:url('assets/resultado-criolipolise.webp');"></div>
-<div class="resultados-reais__card-footer">
-<span class="resultados-reais__card-label">Criolipólise</span>
-<span class="resultados-reais__card-arrow">→</span>
+
+<section id="resultados" class="rr">
+<svg class="rr__deco rr__deco--tl" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<path d="M10 190C40 140 30 90 70 60C100 37 130 45 150 20" stroke="currentColor" stroke-width="1.4"/>
+<path d="M70 60C60 45 65 30 55 15" stroke="currentColor" stroke-width="1.2"/>
+<path d="M70 60C85 52 92 38 88 22" stroke="currentColor" stroke-width="1.2"/>
+<path d="M100 46C90 35 92 22 84 10" stroke="currentColor" stroke-width="1.1"/>
+</svg>
+<svg class="rr__deco rr__deco--br" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<path d="M10 190C40 140 30 90 70 60C100 37 130 45 150 20" stroke="currentColor" stroke-width="1.4"/>
+<path d="M70 60C60 45 65 30 55 15" stroke="currentColor" stroke-width="1.2"/>
+<path d="M70 60C85 52 92 38 88 22" stroke="currentColor" stroke-width="1.2"/>
+<path d="M100 46C90 35 92 22 84 10" stroke="currentColor" stroke-width="1.1"/>
+</svg>
+
+<div class="rr__inner">
+<div class="rr__eyebrow-row"><span class="rr__line"></span><span class="rr__eyebrow">Resultados Reais</span><span class="rr__line"></span></div>
+<h2 class="rr__title">Resultados que você pode <em>ver e sentir.</em></h2>
+<p class="rr__subtitle">Tratamentos personalizados para realçar a sua beleza e bem-estar, com resultados reais e progressivos.</p>
+
+<div class="rr__grid">
+
+<div class="rr-card" data-reveal>
+<div class="rr-card__media">
+<img src="assets/resultado-criolipolise.webp" alt="Resultado de Criolipólise: antes e depois" loading="lazy"/>
+<span class="rr-badge rr-badge--before">Antes</span>
+<span class="rr-badge rr-badge--after">Depois</span>
+<div class="rr-card__divider"></div>
+<span class="rr-card__handle" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="10 5 4 12 10 19"></polyline><polyline points="14 5 20 12 14 19"></polyline></svg>
+</span>
 </div>
-</a>
-<a class="resultados-reais__card" href="#tratamentos">
-<div class="resultados-reais__card-art resultados-reais__card-art--photo" style="background-image:url('assets/resultado-depilacao.webp');"></div>
-<div class="resultados-reais__card-footer">
-<span class="resultados-reais__card-label">Depilação a Laser</span>
-<span class="resultados-reais__card-arrow">→</span>
+<div class="rr-card__footer">
+<span class="rr-card__icon" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><line x1="12" y1="3" x2="12" y2="21"></line><line x1="5" y1="7" x2="19" y2="17"></line><line x1="19" y1="7" x2="5" y2="17"></line></svg>
+</span>
+<div class="rr-card__text">
+<strong class="rr-card__title">Criolipólise</strong>
+<span class="rr-card__subtitle">Redução de medidas</span>
 </div>
-</a>
-<a class="resultados-reais__card" href="#tratamentos">
-<div class="resultados-reais__card-art resultados-reais__card-art--photo" style="background-image:url('assets/resultado-liporedutora.webp');"></div>
-<div class="resultados-reais__card-footer">
-<span class="resultados-reais__card-label">Liporedutora</span>
-<span class="resultados-reais__card-arrow">→</span>
 </div>
-</a>
 </div>
-<p class="resultados-reais__caption">Os resultados podem variar de pessoa para pessoa.</p>
-<a class="resultados-reais__cta" href="https://wa.me/5531993504663" target="_blank">
+
+<div class="rr-card" data-reveal>
+<div class="rr-card__media">
+<img src="assets/resultado-depilacao.webp" alt="Resultado de Depilação a Laser: antes e depois" loading="lazy"/>
+<span class="rr-badge rr-badge--before">Antes</span>
+<span class="rr-badge rr-badge--after">Depois</span>
+<div class="rr-card__divider"></div>
+<span class="rr-card__handle" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="10 5 4 12 10 19"></polyline><polyline points="14 5 20 12 14 19"></polyline></svg>
+</span>
+</div>
+<div class="rr-card__footer">
+<span class="rr-card__icon" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="20" x2="15" y2="9"></line><circle cx="18" cy="6" r="2"></circle><line x1="21" y1="3" x2="22.3" y2="1.7"></line><line x1="21" y1="9" x2="22.3" y2="10.3"></line></svg>
+</span>
+<div class="rr-card__text">
+<strong class="rr-card__title">Depilação a Laser</strong>
+<span class="rr-card__subtitle">Pele mais lisa e livre de pelos</span>
+</div>
+</div>
+</div>
+
+<div class="rr-card" data-reveal>
+<div class="rr-card__media">
+<img src="assets/resultado-liporedutora.webp" alt="Resultado de Liporedutora: antes e depois" loading="lazy"/>
+<span class="rr-badge rr-badge--before">Antes</span>
+<span class="rr-badge rr-badge--after">Depois</span>
+<div class="rr-card__divider"></div>
+<span class="rr-card__handle" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="10 5 4 12 10 19"></polyline><polyline points="14 5 20 12 14 19"></polyline></svg>
+</span>
+</div>
+<div class="rr-card__footer">
+<span class="rr-card__icon" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M7 4c-2 3-2 5 0 8s2 5 0 8"></path><path d="M17 4c2 3 2 5 0 8s-2 5 0 8"></path></svg>
+</span>
+<div class="rr-card__text">
+<strong class="rr-card__title">Liporedutora</strong>
+<span class="rr-card__subtitle">Contorno corporal</span>
+</div>
+</div>
+</div>
+
+</div>
+
+<p class="rr__caption">Os resultados podem variar de pessoa para pessoa.</p>
+<div class="rr__cta-wrap">
+<a class="rr__cta" href="https://wa.me/5531993504663" target="_blank">
 <i aria-hidden="true" class="fab fa-whatsapp"></i>
 AGENDAR MINHA AVALIAÇÃO
 </a>
 </div>
+</div>
 </section>
+<script>
+(function(){
+  var cards = document.querySelectorAll('.rr-card[data-reveal]');
+  if (!('IntersectionObserver' in window)) {
+    cards.forEach(function(c){ c.classList.add('is-visible'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  cards.forEach(function(c){ io.observe(c); });
+})();
+</script>
+
 
 <style id="tratamentos-real-css">
 .tratamentos-real{background-color:#FAF7F5;padding:100px 20px;}
